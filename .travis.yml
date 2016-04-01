@@ -13,10 +13,11 @@ addons:
       - qemu-user-static
       - binfmt-support
       - sbuild
+      - coreutils
 
-      
 script:
     - chroot --version
     - echo "launching the chroot..."
-    #- chmod +x setup-arm-chroot.sh
+    - ls -al
+    - chmod +x setup-arm-chroot.sh
     - ./setup-arm-chroot.sh
