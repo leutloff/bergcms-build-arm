@@ -1,0 +1,22 @@
+# trusty (14.04) is now working instead of precise (12.04)
+dist: trusty
+sudo: required
+language: cpp
+#compiler: gcc
+cache: apt
+addons:
+  apt:
+    packages:
+      - curl
+      - wget
+      - debootstrap
+      - qemu-user-static
+      - binfmt-support
+      - sbuild
+
+      
+script:
+    - chroot --version
+    - echo "launching the chroot..."
+    #- chmod +x setup-arm-chroot.sh
+    - ./setup-arm-chroot.sh
